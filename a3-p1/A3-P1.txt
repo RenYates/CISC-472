@@ -1,0 +1,55 @@
+CISC 472 Assignment 3 - Part 1
+Due April 3, 2020
+
+
+1. Implement ICP in Matlab using the skeleton code provided.
+
+   The code already does this:
+
+     - reads a femur model;
+     - reads your collected points (knee1.csv and knee2.csv);
+     - find the points at which you paused with the stylus;
+     - uses a kD-tree to find the closest model points to a
+       *transformed* set of your collected points; and
+     - renders everything.
+
+   (You might need to install the MatLab package containing the
+   kD-tree, depending upon the version of MatLab you're running.)
+
+   Your code should only be inside the ICP loop.  You'll have to think
+   carefully about how you want to implement this.  The implementation
+   is much easier if you have thought a lot beforehand.
+
+2. Apply your ICP algorithm to your knee1.csv and knee2.csv.  Report
+   the results for each.  Include rotation, translation, number of
+   iterations, and RMS error.
+
+3. Some people will find that ICP fails to find a good match (i.e. a
+   match with low RMS error).  One workaround is to try ICP multiple
+   times, randomly choosing a different initial transformation each
+   time.
+
+   Modify your code so that it makes a number of attempts
+   ('numAttempts' in the code) and chooses a random pose each time.
+   Think about what a good initial translation might be.
+
+4. Apply your multi-attempt ICP algorithm to your data.  Report the
+   results, as above, for both knee1.csv and knee2.csv.
+
+5. Did the multi-attempt version of ICP work better or worse?  Discuss
+   this briefly, speculating on ICP's strengths and weaknesses (at
+   most a paragraph).
+
+To submit:
+
+  Create a directory called 'a3-p1' containing EXACTLY:
+
+    - your a3.m
+
+    - a README.txt file with (a) your names and netIDs and (b)
+      responses to the questions above.
+
+  DO NOT INCLUDE the femur.stl.  DO NOT INCLUDE your own CSV files.
+
+  Zip and email your a3-p1.zip to jstewart@cs.queensu.ca.
+

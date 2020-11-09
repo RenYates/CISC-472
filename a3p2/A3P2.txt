@@ -1,0 +1,54 @@
+CISC 472 Assignment 2 - Part 2
+
+Due April 3, 2020 (or a week later if you need the time)
+
+1. Run the provided code to see the Mutual Information similarity
+   measure for two images.  Press the arrow keys while in the MatLab
+   figure window to translate the bottom image and see how the
+   similarity measure changes.  Press < and > to rotate the bottom
+   image.
+
+2. Set 'interactive' to false.
+
+3. Modify '[YOUR CODE HERE]' in collect_measures() to build matrics of
+   similarity measures for different offsets and rotations, as
+   described by the function's header comment.  (See also the comment
+   that starts with 'Build 2D plots'.)  Your output will consist of 18
+   graphs in two windows.  An example image is included in this archive.
+   Note that the code already has functions to compute MI, RMS, and NCC.
+
+4. Once your code is working with a 'step' of 40, set the 'step' to 4
+   and run the code again.  Make the two output windows large and save
+   each as a PNG image for submission.
+
+4. For the CT/MR measures, comment very briefly (two sentences for
+   each, at most) on each of:
+
+     - the effect of rotation and translation away from the perfect registration
+     - the smoothness of the MI, RMS, and NCC measures
+     - the capture range of MI, RMS, and NCC
+
+5. For CT/MR using Mutual Information, why is there a sharp
+   discontinuity in the measure at certain translations?
+
+6. For CT/CT using Mutual Information, why does the measure start to
+   increase after a certain point as the translation distance
+   increases?
+
+7. What is your recommendation for a similarity measure for
+   registering CT to MR images.  Justify your answer.
+
+To submit:
+
+  Create a directory called 'a3p2' containing EXACTLY:
+
+    - your a3p2.m
+
+    - a README.txt file with (a) your names and netIDs and
+      (b) responses to the questions above.
+
+    - one image of the nine T1/T2 measures
+
+    - one image of the nine T1/T1 measures
+
+  Zip and email your a3p2.zip to jstewart@cs.queensu.ca.

@@ -1,0 +1,65 @@
+CISC 472 Assignment 1
+Due Tuesday, February 11 before class
+
+Modify the a1.m MatLab skeleton code as follows:
+
+  1. In 'parallelSinogram', compute the sinogram using parallel rays.
+     Do this efficiently by using imrotate() to rotate the image so that
+     its x axis aligns with the parallel ray direction before you add up
+     the attenuations along each ray.
+
+  2. In 'backproject', compute the backprojection from a sinogram.  You
+     can use 'repmat' to duplicate a sinogram row over many columns of a
+     matrix, and use 'imrotate' to align the backprojection of each row
+     of the sinogram with the image in which you accumulate the
+     backprojections.
+
+  3. In 'applyFilter', implement convolution.  This is double nested
+     loop.  Be sure to check that your indices i-j+offset do not exceed
+     the array bounds.
+
+  4. In 'iterativeReconstruction', implement iterative reconstruction.
+     Each iteration handles a particular angle and should update the
+     image for ALL RAYS at that particular angle.  As before,
+     'imrotate' is useful.
+
+Answer the following questions:
+
+  A) How does the Ram-Lak filtered backprojection perceptibly differ
+  from the Shepp-Logan filtered backprojection?  You might (or might
+  not) have to use fewer angles to see a difference.
+
+  B) What is a good 'numTheta' for filtered backprojections, at which
+  point adding more angles does not perceptibly improve image quality?
+
+  C) Why does the backprojected image have a circle around everything?
+
+  D) For iterative reconstruction, how could you take advantage of the
+  fact that the subject is entirely within a circle?
+
+  E) Your backprojection images might have a different overall
+  brightness than your iterative reconstruction images.  If so, why
+  does this occur?
+
+To submit:
+
+  Create a directory called 'a1'.
+
+  In that directory put these files:
+
+    a1.m       - your MatLab code
+
+    image.png  - a screen capture of your output
+
+    README.txt - a file with the name, netID, and student number of
+                 each member of your group (maximum 2).  Also include
+                 any comments for the TA who will mark this.
+
+    answers.txt - a TEXT or PDF or WORD file with your answers A-E.
+    answers.pdf
+    answers.docx
+
+  Create a zip archive of the DIRECTORY a1, not of the individual
+  files.  Name the archive a1.zip
+
+  Submit the archive by email to jstewart@cs.queensu.ca.

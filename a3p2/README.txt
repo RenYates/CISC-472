@@ -1,0 +1,20 @@
+CISC 472 - Assignment 3 pt. 2
+
+
+Students: Colton Barr 14cb49	Lauren Yates 15ly1
+
+--------------------------------------------------
+
+Answers and Results
+
+4. A) We will assume that the perfect registration refers to the translation in X and Y that correspond with the largest peak seen in the Z axis. Translation in either X-axis or Y-axis away from the perfect registration results in a decline in the mutual information (MI) and normalized cross correlation (NCC), and an increase in RMSE. The MI and NCC measures appear to be highest at 0 and 90 degrees of rotations, and lowest at 45 degrees. The RMSE, however, seems to be relatively similar between rotations.
+
+   B) MI appears to yield the smoothest plot, with the exception of a sudden drop off in MI value at Y=20 in the 0 degree rotated plot, and X=20 in the MI rotated 90 degrees. The RMSE and NCC plots are somewhat more irregular, with a less consistent surface slope. There doesn’t seem to be a detectable change in the smoothness between different image rotations.
+
+   C) The capture radius was largest for MI since it was smooth, with a consistent slope and only one local maximum. The capture radii for the RMSE and NCC plot were comparatively smaller due to the presence of other local maxima. This was caused by the less regular surface slope and noisier appearance of the plots in general.
+
+5. The discontinuity in the MI plots occurs most dramatically at Y=20 in the 0 degrees plot and X=20 in the  90 degrees plot. Plotting the image at this threshold in the 0 degrees plot shows that, as the CT image is move from Y=20 to Y=21, a bright white structure is revealed at the top of the image. The same is true when the image is rotated 90 degrees, only the discontinuity occurs in the X axis since the structure is revealed as it moves horizontally. This structure contains some of the highest intensity pixels in the entire image, and therefore would introduce a number of new high intensity bins into the CT image’s histogram. This would result in a sudden increase in mutual information, which is seen as the sudden discontinuity in the surface plot.
+
+6. Generally speaking, the coherence of the joint histogram corresponds with the MI between two images. A joint histogram with a small number of high value bins and a large number of bins with 0 pixels indicates that certain intensities are highly predictive of one another, and therefore the images have a high MI. Conversely, a joint histogram with a large number of very low valued bins suggests that pixel values are poorly predictive of on another, and therefore that the MI is low. In the case of the furthest translations of the CT image in the CT/CT MI plots, we find fewer and fewer non-zero bins in the histogram. These non-zero bins tend to lie in very specific intensity ranges, since there are so few non-zero pixels in the translated CT image, and therefore tend to have quite high values. This means that, despite the registration clearly being incorrect, the MI between the images continues to increase as the registration gets worse since the amount of low intensity bins in the join histogram decreases as well. Despite the joint histogram appearing as two lines parallel to each axis, rather than a single x=y line indicating the ideal registration, it is highly coherent and therefore implies a relatively high mutual information.
+
+7. Based on our results using MI, RMSE and NCC, we believe that MI is the best similarity measure for registration CT images to CM images. This is most strongly supported by the smooth, well-defined surfaces produced by the MI visualizations, which would be far better suited to a gradient-ascent algorithm than the more irregular RMSE and NCC graphs. The MI graphs also had a single local and global maximum that represented the best registration, while the other two metrics had several local maxima and would require must more exploration to yield the global solution. In addition, the capture range of MI was far larger than both RMSE and NCC, meaning that the probability of finding the optimal solution will generally be higher using MI than the other two metrics.
